@@ -6,13 +6,14 @@
 function findElement(arr, func) {
   let num = 0;
   for (let i = 0; i < arr.length; i++) {
-    if (func = true) {
-      return func
-    } else {
-      return undefined
+    num = arr[i]; // Num is set as each index in the array
+    if (func(num)) {
+      // Pre-defined function already checks each number for us,
+      // So if it's true we return num
+      return num 
     }
   }
-  return num;
+  return undefined // If none return true, return undefined
 }
 
 console.log(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })) // should return 8.
